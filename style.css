@@ -1,16 +1,58 @@
-html, body {
-    font-family: 'Roboto', sans-serif;
+/* CSS Reset & Normalize */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
 }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Global section styles for overflow protection */
+section, main {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 /*--header--*/
 .header-all{
     background-image: url(img/da27bd438630da03b62a1aaa9ec31dd0.jfif);
     border-radius: 0.625rem;
     height: 85vh;
+    min-height: 500px;
+    max-height: 900px;
     margin: 0.625rem;
     background-size: cover; 
-    background-position: center; 
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
 }
 li {
     list-style-type: none;
@@ -25,18 +67,22 @@ li {
     justify-content: space-between;
     position: relative;
     margin: 0 3.125rem;
+    padding: 0 1rem;
     height: 5rem;
     align-items: center;
     border-bottom: 0.0625rem solid hsla(0, 0%, 100%, 0.2);
+    flex-wrap: wrap;
 }
 .header-nav-text-all{
     display: flex;
     justify-content: space-between;
     width: 17.1875rem;
+    max-width: 100%;
     position: relative;
-    height: 5rem;
-    align-items: center;
     height: 0.9375rem;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 .header-nav-text1, .header-nav-text2, .header-nav-text3, .header-nav-text4{
     font-size: 0.8125rem;
@@ -66,14 +112,17 @@ li {
     font-family: 'Recife Display', serif;
     font-size: 3rem;
     color: rgb(255, 255, 255);
-    margin-right: 43%;
+    margin-right: auto;
+    margin-left: auto;
 }
 .header-p{
     font-family: 'Recife Display', serif;
     color: rgb(255, 255, 255);
-    font-size: 5.3125rem;
+    font-size: clamp(2rem, 5.3125rem, 8vw);
     margin: 0 0 0 3.125rem;
     margin-top: 3.75rem;
+    line-height: 1.1;
+    word-break: break-word;
 }
 .header-btn{
     background-color: #1f1e1e;
@@ -124,6 +173,10 @@ li {
     font-size: 0.75rem;
     margin-top: 4.6875rem;
     text-transform: uppercase;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    gap: 1rem;
+    max-width: 100%;
 }
 .advantages-1, .advantages-2, .advantages-3, .advantages-4{
     display: flex;
@@ -138,11 +191,13 @@ li {
 .colours-title{
     font-family: 'Recife Display', serif;
     color: #1f1e1e;
-    font-size: 10rem;
+    font-size: clamp(3rem, 10rem, 15vw);
     font-weight: 100;
     display: flex;
     justify-content: center;
     margin: 3.4375rem 0 5.3125rem 0;
+    text-align: center;
+    word-break: break-word;
 }
 .colours{
     width: 13.3125rem;
@@ -503,22 +558,41 @@ li {
     display: flex;
     justify-content: center;
     text-align: center;
-    font-size: 3.375rem;
+    font-size: clamp(1.5rem, 3.375rem, 6vw);
     margin: 1.875rem 0 0 0;
+    padding: 0 1rem;
+    word-break: break-word;
+    line-height: 1.2;
 }
 .mission{
     margin: 0 4rem 0 4rem;
-    padding: 0 16rem 8rem 16rem;
+    padding: 0 clamp(2rem, 16rem, 20%);
+    padding-bottom: 8rem;
     border-bottom: 0.0625rem solid hsla(30, 7%, 11%, 0.15);
+    max-width: 100%;
+    box-sizing: border-box;
 }
+.about-2-no{
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
 .about-1{
     margin: 4rem 4rem 2.8125rem 4rem;
     display: flex;
+    width: calc(100% - 8rem);
+    max-width: 100%;
+    overflow: hidden;
 }
 .about-1-img{
     width: 39.125rem;
+    max-width: 50%;
+    flex-shrink: 0;
     border-radius: 0.625rem;
     margin-right: 0.6875rem;
+    object-fit: cover;
 }
 .about-1-text{
     display: flex;
@@ -528,20 +602,27 @@ li {
     background-color: #F4EDE6;
     border-radius: 0.625rem;
     width: 100%;
+    flex: 1;
+    min-width: 0;
 }
 .about-1-text-h2{
     font-family: 'Recife Display', serif;
     color: #425E44;
-    font-size: 4.8125rem;
+    font-size: clamp(2rem, 4.8125rem, 8vw);
     font-weight: 100;
     text-align: center;
-    width: 50%;
-    height: 25rem;
+    width: 90%;
+    max-width: 50%;
+    min-height: 15rem;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     line-height: 0.95;
     margin-bottom: 0.625rem;
+    padding: 1rem;
+    word-break: break-word;
+    box-sizing: border-box;
 }
 .about-1-text-h5{
     font-family: "DM Mono", monospace;
@@ -554,11 +635,14 @@ li {
 .about-2-title{
     font-family: 'Recife Display', serif;
     color: #1f1e1e;
-    font-size: 16.25rem;
+    font-size: clamp(3rem, 16.25rem, 25vw);
     font-weight: 100;
     display: flex;
     justify-content: center;
     margin: 0;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 .about-2-text{
     font-family: 'Recife Display', serif;
@@ -604,16 +688,23 @@ li {
 .about-3-sticker{
     margin: 4rem;
     display: flex;
+    width: calc(100% - 8rem);
+    max-width: 100%;
+    overflow: hidden;
 }
 .about-3-img-text-container{
     position: relative;
-    display: inline-block;
+    display: flex;
+    flex: 1;
+    min-width: 0;
 }
 .about-3-img-left{
-    width: 55vw;
+    width: 99%;
     height: 43.125rem;
     border-radius: 0.625rem;
     margin-right: 0.6875rem;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 .about-3-text{
     position: absolute;
@@ -632,10 +723,12 @@ li {
     color: #1f1e1e;
 }
 .about-3-h2{
-    font-size: 4.125rem;
-    width: 32.5rem;
+    font-size: clamp(1.5rem, 4.125rem, 7vw);
+    width: 90%;
+    max-width: 32.5rem;
     text-align: center;
-    line-height: 1;
+    line-height: 1.1;
+    word-break: break-word;
 }
 .about-3-btn{
     font-family: "DM Mono", monospace;
@@ -670,27 +763,40 @@ li {
 }
 .about-3-img-right{
     width: 43.125rem;
+    max-width: 45%;
+    flex-shrink: 0;
     height: 43.125rem;
     border-radius: 0.625rem;
+    object-fit: cover;
 }
 .cooperation-list{
     margin: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: calc(100% - 8rem);
 }
 .cooperation-img{
     width: 16rem;
 }
 .gallery{
     margin: 0 4rem 1.3125rem 4rem;
+    max-width: 100%;
+    overflow: hidden;
 }
 .gallery-collage1{
     display: flex;
     height: 43.125rem;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 .gallery-collage1-img{
     width: 43.75rem;
+    max-width: 50%;
+    flex-shrink: 0;
     height: 43.75rem;
 }
 .gallery1-img1{
@@ -814,7 +920,8 @@ li {
     opacity: 1;
 }
 .gallery-collage1-text{
-    width: 55vw;
+    flex: 1;
+    min-width: 0;
     height: 43.125rem;
     background-color: #c6bc8a;
     border-radius: 0.625rem;
@@ -832,16 +939,21 @@ li {
 .agallery-collage1-text-h2{
     font-family: 'Recife Display', serif;
     color: #425E44;
-    font-size: 4.625rem;
+    font-size: clamp(1.5rem, 4.625rem, 8vw);
     font-weight: 100;
-    width: 34.375rem;
-    height: 22.8125rem;
-    line-height: 1;
+    width: 90%;
+    max-width: 34.375rem;
+    min-height: 10rem;
+    height: auto;
+    line-height: 1.1;
     margin: 0;
     display: flex;
     text-align: center;
     align-items: end;
     letter-spacing: 0.0625rem;
+    word-break: break-word;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 .gallery-instagram{
     font-family: 'Recife Display', serif;
@@ -866,19 +978,26 @@ li {
 .gallery-collage2{
     margin-top: 0.625rem;
     display: flex;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 .gallery-collage2-big-img{
+    flex: 1;
+    min-width: 0;
     height: 43.125rem;
     margin-right: 0.625rem;
 }
 .gallery2-img1{
-    width: 55vw;
+    width: 100%;
     height: 43.125rem;
     border-radius: 0.625rem;
     object-fit: cover;
 }
 .gallery-collage2-img{
-    width: 43.125rem;
+    width: 43.75rem;
+    max-width: 50%;
+    flex-shrink: 0;
     height: 43.125rem;
 }
 .gallery2-img2{
@@ -1004,19 +1123,25 @@ li {
 .gallery-collage3{
     margin-top: 0.625rem;
     display: flex;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 .gallery-collage3-big-img{
+    flex: 1;
+    min-width: 0;
     height: 43.125rem;
-    margin-left: 0.625rem;
 }
 .gallery3-img5{
-    width: 55vw;
+    width: 100%;
     height: 43.125rem;
     border-radius: 0.625rem;
     object-fit: cover;
 }
 .gallery-collage3-img{
-    width: 43.125rem;
+    width: 43.75rem;
+    max-width: 50%;
+    flex-shrink: 0;
     height: 43.125rem;
 }
 .gallery3-img1{
@@ -1140,7 +1265,8 @@ li {
     opacity: 1;
 }
 .gallery-collage4-text{
-    width: 55vw;
+    flex: 1;
+    min-width: 0;
     height: 43.125rem;
     background-color: #c6bc8a;
     border-radius: 0.625rem;
@@ -1159,16 +1285,21 @@ li {
 .agallery-collage4-text-h2{
     font-family: 'Recife Display', serif;
     color: #425E44;
-    font-size: 4.625rem;
+    font-size: clamp(1.5rem, 4.625rem, 8vw);
     font-weight: 100;
-    width: 34.375rem;
-    height: 22.8125rem;
-    line-height: 1;
+    width: 90%;
+    max-width: 34.375rem;
+    min-height: 10rem;
+    height: auto;
+    line-height: 1.1;
     margin: 0;
     display: flex;
     text-align: center;
     align-items: end;
     letter-spacing: 0.0625rem;
+    word-break: break-word;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 .gallery-instagram{
     font-family: 'Recife Display', serif;
@@ -1193,9 +1324,14 @@ li {
 .gallery-collage4{
     margin-top: 0.625rem;
     display: flex;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 .gallery-collage4-img{
-    width: 43.125rem;
+    width: 43.75rem;
+    max-width: 50%;
+    flex-shrink: 0;
     height: 43.125rem;
 }
 .gallery4-img2{
@@ -1321,19 +1457,25 @@ li {
 .gallery-collage5{
     margin-top: 0.625rem;
     display: flex;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 .gallery-collage5-big-img{
+    flex: 1;
+    min-width: 0;
     height: 43.125rem;
-    margin-left: 0.625rem;
 }
 .gallery5-img5{
-    width: 55vw;
+    width: 100%;
     height: 43.125rem;
     border-radius: 0.625rem;
     object-fit: cover;
 }
 .gallery-collage5-img{
-    width: 43.125rem;
+    width: 43.75rem;
+    max-width: 50%;
+    flex-shrink: 0;
     height: 43.125rem;
 }
 .gallery5-img1{
