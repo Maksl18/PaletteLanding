@@ -791,7 +791,7 @@ li {
 .gallery-collage1{
     display: flex;
     height: 43.125rem;
-    width: 100%;
+    width: 99.5%;
     max-width: 100%;
     overflow: hidden;
 }
@@ -2017,3 +2017,4 @@ li {
     margin-bottom: 1.25rem;
 }
 }
+
