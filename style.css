@@ -1752,18 +1752,20 @@ li {
 .footer-footer {
     margin-top: 0.5rem;
 }
-.footer-title-text {
+.footer-title {
     text-transform: uppercase;
     font-family: "Recife Display", serif;
     font-size: 20.625rem;
     font-weight: 100;
     color: #1f1e1e;
     margin: 0;
-    display: block;
+    display: flex;
+    justify-content: space-between;
     text-align: center;
     line-height: 0.8;
     width: 100%;
-    letter-spacing: 3.5rem;
+
+    padding-bottom: 1rem;
 }
 .trustpilot-and-admin {
     display: flex;
@@ -1865,14 +1867,17 @@ li {
     font-size: 2rem;
 }
 .about-1, .about-3-sticker {
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
 }
 .about-1-img, .about-1-text{
     width: 100%;
+    max-width: 100%;
     margin: 0.625rem 0;
 }
 .about-1-text-h2{
     font-size: 2.1875rem; 
+    max-width: 100%;
 }
 .about-2-title {
     font-size: 3.75rem;
@@ -1891,6 +1896,7 @@ li {
 }
 .about-3-img-right{
     width: 100%;
+    max-width: 100%;
     margin: 0.625rem 0;
     height: 16.375rem;
 }
@@ -1919,9 +1925,15 @@ li {
 .gallery-collage1, .gallery-collage2, .gallery-collage3, .gallery-collage5 {
     flex-wrap: wrap;
 }
+.gallery-collage5 {
+    margin: 0;
+}
+.gallery-collage2 {
+    display: block;
+}
 .gallery-collage4{
-    flex-wrap: wrap;
-    width: 21.875rem;
+    display: block;
+    width: 21.3rem;
 }
 .gallery-collage1-text{
     width: 100%;
@@ -1929,19 +1941,27 @@ li {
     background-color: #fff;
 }
 .agallery-collage1-text-h2 {
-    font-size: 3rem;
-    width: auto;
-    height: auto;
+    font-size: 0;
 }
-.gallery-collage1-img, .gallery-collage2-big-img, .gallery-collage2-img,
+.gallery-collage1-text-h5 {
+    font-size: 0;
+}
+.gallery-collage1-img, .gallery-collage2-img,
 .gallery-collage3-big-img, .gallery-collage3-img, .gallery-collage4-img,
 .gallery-collage5-big-img, .gallery-collage5-img {
     width: 100%;
     margin: 0.625rem 0;
 }
+.gallery-collage4-img {
+    margin: 0;
+}
+.gallery-collage2-big-img {
+    height: 0;
+}
 .gallery-collage4-text{
     height: 38.75rem;
     width: 100%;
+    margin-bottom: 0.625rem;
 }
 .gallery1-img1, .gallery1-img2, .gallery1-img3, .gallery1-img4, .gallery2-img2, .gallery2-img3,
 .gallery3-img1, .gallery3-img2, .gallery3-img3, .gallery3-img4,
@@ -2005,7 +2025,7 @@ li {
     grid-row-gap: 0.9375rem;
     border-top: 0.0625rem solid black;
 }
-.footer-title-text {
+.footer-title {
     font-size: 5rem;
     letter-spacing: 0;
 }
